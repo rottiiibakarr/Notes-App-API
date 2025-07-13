@@ -74,7 +74,7 @@ const getNoteByIdHandler = (request, h) => {
   return response;
 };
 
-const editNoteByHandler = (request, h) => {
+const editNoteByIdHandler = (request, h) => {
   const { id } = request.params;
 
   const { title, tags, body } = request.payload;
@@ -135,6 +135,6 @@ module.exports = {
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
-  editNoteByHandler,
-  deleteNoteByIdHandler
+  editNoteByIdHandler,
+  deleteNoteByIdHandler,
 };
