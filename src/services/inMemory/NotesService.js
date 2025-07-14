@@ -30,11 +30,11 @@ class NotesService {
     return id;
   }
 
-  getNote() {
+  getNotes() {
     return this._notes;
   }
 
-  getNoteById({ id }) {
+  getNoteById(id) {
     const note = this._notes.filter((n) => n.id === id)[0];
 
     if (!note) {
@@ -44,7 +44,7 @@ class NotesService {
     return note;
   }
 
-  editNoteById({ title, body, tags }) {
+  editNoteById(id, { title, body, tags }) {
     const index = this._notes.findIndex((note) => note.id === id);
 
     if (index === -1) {
@@ -62,7 +62,7 @@ class NotesService {
     };
   }
 
-  deleteNoteById({ id }) {
+  deleteNoteById(id) {
     const index = this._notes.findIndex((note) => note.id === id);
 
     if (index === -1) {
